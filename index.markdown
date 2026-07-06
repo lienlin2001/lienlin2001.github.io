@@ -4,7 +4,7 @@ layout: default
 
 <section class="home">
   <div class="home-intro">
-    <h1 class="home-lede">Li-En Lin is an economist working in development and experimental economics.</h1>
+    <h1 class="home-lede">Li-En Lin (林立恩) is an economist working in development and experimental economics.</h1>
 
     <p class="home-position">Research Assistant, Centre for the Study of African Economies, Department of Economics, University of Oxford.</p>
 
