@@ -1,0 +1,185 @@
+/* ---- Minimal academic layout, Dittmar-inspired ---- */
+
+:root {
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --rule: #e2e2e2;
+  --link: #1a1a1a;
+  --link-hover: #8a6d3b;
+  --measure: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26,26,26,.25);
+  transition: color .15s ease, border-color .15s ease;
+}
+a:hover { color: var(--link-hover); border-color: var(--link-hover); }
+
+/* ---- Header / nav ---- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+.nav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 22px 28px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nav-name {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  border-bottom: none;
+}
+.nav-name:hover { color: var(--ink); }
+.nav-links {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.nav-links a {
+  margin-left: 26px;
+  border-bottom: none;
+  color: var(--muted);
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ---- Page ---- */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 68px 28px 40px;
+}
+
+/* ---- Home ---- */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 56px;
+  align-items: start;
+}
+.home-lede {
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 400;
+  margin: 0 0 28px;
+  max-width: 620px;
+}
+.home-position {
+  font-size: 21px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+.home-bio {
+  max-width: 620px;
+  margin: 0 0 28px;
+}
+.home-contact {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  letter-spacing: .02em;
+}
+.home-contact a { margin-right: 20px; }
+.home-photo {
+  width: 100%;
+  border-radius: 2px;
+  filter: grayscale(100%);
+}
+.home-photo-wrap figcaption {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ---- Content sections (Research, CV) ---- */
+.section-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+  margin: 52px 0 26px;
+}
+.section-title:first-child { margin-top: 0; }
+
+.entry { margin: 0 0 30px; max-width: var(--measure); }
+.entry-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+.entry-meta {
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.entry-desc { margin: 0 0 8px; }
+.entry-links {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: .02em;
+}
+
+/* ---- CV lists ---- */
+.cv-list { list-style: none; padding: 0; margin: 0 0 10px; max-width: var(--measure); }
+.cv-list li { margin: 0 0 16px; }
+.cv-list .role { font-weight: 500; }
+.cv-list .where { color: var(--muted); }
+.cv-list .when {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+.cv-embed {
+  width: 100%;
+  height: 900px;
+  border: 1px solid var(--rule);
+  margin-top: 10px;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  max-width: 960px;
+  margin: 60px auto 0;
+  padding: 24px 28px 40px;
+  border-top: 1px solid var(--rule);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  body { font-size: 18px; }
+  .home { grid-template-columns: 1fr; gap: 32px; }
+  .home-photo-wrap { order: -1; max-width: 220px; }
+  .home-lede { font-size: 25px; }
+  .nav { padding: 18px 20px; }
+  .nav-links a { margin-left: 18px; }
+  .page { padding: 44px 20px 30px; }
+  .cv-embed { height: 560px; }
+}
